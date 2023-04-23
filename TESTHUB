@@ -1,0 +1,223 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "dreamybull hub", IntroEnabled = false, HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+getgenv().selectedOption = "string"
+
+
+local Tab = Window:MakeTab({
+	Name = "TELEPORT TO NPCS",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+function notify()
+	OrionLib:MakeNotification({
+		Name = "teleporting...",
+		Content = "SUCCESS!",
+		Image = "rbxassetid://4483345998",
+		Time = 5
+	})
+end
+
+getgenv().selectedOption = "string"
+
+Tab:AddDropdown({
+	Name = "QUEST NPCS",
+	Default = "OLD MAN",
+	Options = {"OLD MAN", "FORMER PILLAR", "HALF-ARM SLAYER", "BOX QUEST", "ONE ARM SLAYER"},
+	Callback = function(Value)
+		getgenv().selectedOption = Value
+	end    
+})
+
+
+Tab:AddButton({
+	Name = "TELEPORT",
+	Callback = function()
+      	if getgenv().selectedOption == "OLD MAN" then
+			notify()
+			local teleport_table = {
+				location1 = Vector3.new (-2836.05, 1122.07, -1022.51)
+			}
+			
+			local tween_s = game:GetService('TweenService')
+			local tweeninfo = TweenInfo.new(6,Enum.EasingStyle.Linear)
+			
+			local lp = game.Players.LocalPlayer
+			
+			function bypass_teleport(v)
+				if lp.Character and
+				lp.Character:FindFirstChild('HumanoidRootPart') then
+			
+				local cf = CFrame.new(v)
+				local a = tween_s:Create(lp.Character.HumanoidRootPart,tweeninfo,{CFrame=cf})
+				a:Play()
+				a.Completed:Wait()
+				end
+			end
+			
+			bypass_teleport(teleport_table.location1)
+		elseif getgenv().selectedOption == "FORMER PILLAR" then
+			notify()
+			local teleport_table = {
+				location1 = Vector3.new (-283.534, 823.044, 187.398)
+			}
+			
+			local tween_s = game:GetService('TweenService')
+			local tweeninfo = TweenInfo.new(5,Enum.EasingStyle.Linear)
+			
+			local lp = game.Players.LocalPlayer
+			
+			function bypass_teleport(v)
+				if lp.Character and
+				lp.Character:FindFirstChild('HumanoidRootPart') then
+			
+				local cf = CFrame.new(v)
+				local a = tween_s:Create(lp.Character.HumanoidRootPart,tweeninfo,{CFrame=cf})
+				a:Play()
+				a.Completed:Wait()
+				end
+			end
+			
+			bypass_teleport(teleport_table.location1)
+		elseif getgenv().selectedOption == "HALF-ARM SLAYER" then
+			notify()
+			local teleport_table = {
+				location1 = Vector3.new (-77.8847, 823.054, 205.197)
+			}
+			
+			local tween_s = game:GetService('TweenService')
+			local tweeninfo = TweenInfo.new(5,Enum.EasingStyle.Linear)
+			
+			local lp = game.Players.LocalPlayer
+			
+			function bypass_teleport(v)
+				if lp.Character and
+				lp.Character:FindFirstChild('HumanoidRootPart') then
+			
+				local cf = CFrame.new(v)
+				local a = tween_s:Create(lp.Character.HumanoidRootPart,tweeninfo,{CFrame=cf})
+				a:Play()
+				a.Completed:Wait()
+				end
+			end
+			
+			bypass_teleport(teleport_table.location1)
+		elseif
+			getgenv().selectedOption == "BOX QUEST" then
+			notify()
+			local teleport_table = {
+				location1 = Vector3.new (-1303.03, 916.449, 61.7297)
+			}
+			
+			local tween_s = game:GetService('TweenService')
+			local tweeninfo = TweenInfo.new(5,Enum.EasingStyle.Linear)
+			
+			local lp = game.Players.LocalPlayer
+			
+			function bypass_teleport(v)
+				if lp.Character and
+				lp.Character:FindFirstChild('HumanoidRootPart') then
+			
+				local cf = CFrame.new(v)
+				local a = tween_s:Create(lp.Character.HumanoidRootPart,tweeninfo,{CFrame=cf})
+				a:Play()
+				a.Completed:Wait()
+				end
+			end
+			
+			bypass_teleport(teleport_table.location1)
+		elseif
+			getgenv().selectedOption == "ONE ARM SLAYER" then
+			notify()
+			local teleport_table = {
+				location1 = Vector3.new (-2404.84, 828.903, 566.296)
+			}
+			
+			local tween_s = game:GetService('TweenService')
+			local tweeninfo = TweenInfo.new(5,Enum.EasingStyle.Linear)
+			
+			local lp = game.Players.LocalPlayer
+			
+			function bypass_teleport(v)
+				if lp.Character and
+				lp.Character:FindFirstChild('HumanoidRootPart') then
+			
+				local cf = CFrame.new(v)
+				local a = tween_s:Create(lp.Character.HumanoidRootPart,tweeninfo,{CFrame=cf})
+				a:Play()
+				a.Completed:Wait()
+				end
+			end
+			
+			bypass_teleport(teleport_table.location1)
+		else
+			print ("you are such a nigger.")
+		end
+  	end    
+})
+
+
+Tab:AddButton({
+	Name = "Reset Char",
+	Callback = function()
+		game:GetService("Players").LocalPlayer.Character:Destroy()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Destroy GUI",
+	Callback = function()
+		OrionLib:Destroy()
+  	end    
+})
+
+
+
+local Tab = Window:MakeTab({
+	Name = "OTHER SCRIPTS",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+function openGui()
+	loadstring(game:HttpGet("https://pastebin.com/raw/UXmbai5q", true))()
+end
+
+function dexPRO()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", true))()
+end
+
+function infYield()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end
+
+Tab:AddButton({
+	Name = "INF YIELD",
+	Callback = function()
+      	infYield()
+  	end    
+})
+
+
+Tab:AddButton({
+	Name = "DEX",
+	Callback = function()
+      	dexPRO()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "OPEN GUI",
+	Callback = function()
+      	openGui()
+  	end    
+})
+
+
+Tab:AddLabel("ONLY USE ONCE")
+Tab:AddLabel("USE OPEN GUI FOR FLY")
+Tab:AddLabel("INF YIELD FOR BRING OR KILL PPL AND OTHER MORE")
+Tab:AddLabel("USE DEX IF U KNOW HOW TO")
+
+OrionLib:Init()
